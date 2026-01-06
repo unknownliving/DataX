@@ -24,7 +24,7 @@ public class DirectPathConnHolder extends AbstractConnHolder {
     /**
      * The server side timeout.
      */
-    private static final long SERVER_TIMEOUT = 24L * 60 * 60 * 1000 * 1000;
+    private static final long SERVER_TIMEOUT = 2L * 60 * 60 * 1000 * 1000;
 
     private static final ConcurrentHashMap<Table, DirectPathConnection> cache = new ConcurrentHashMap<>();
 

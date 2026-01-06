@@ -197,6 +197,9 @@ public class CommonRdbmsReader {
 
                 ResultSetMetaData metaData = rs.getMetaData();
                 columnNumber = metaData.getColumnCount();
+                for (int i = 1; i < columnNumber; i++) {
+                    LOG.info("Column: " + metaData.getColumnName(i) + ", Type: " + metaData.getColumnTypeName(i));
+                }
 
                 //这个统计干净的result_Next时间
                 PerfRecord allResultPerfRecord = new PerfRecord(taskGroupId, taskId, PerfRecord.PHASE.RESULT_NEXT_ALL);

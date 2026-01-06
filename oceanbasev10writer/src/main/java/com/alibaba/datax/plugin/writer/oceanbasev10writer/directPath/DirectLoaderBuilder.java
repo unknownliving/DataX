@@ -74,11 +74,11 @@ public class DirectLoaderBuilder implements Serializable {
 
     public DirectLoaderBuilder user(String user) {
         //1.4.0的obkv版本只需要用户名称，不能带租户和集群信息
-        int indexOf = user.indexOf("@");
+//        int indexOf = user.indexOf("@");
         this.user = user;
-        if (indexOf > 0) {
-            this.user = user.substring(0, indexOf);
-        }
+//        if (indexOf > 0) {
+//            this.user = user.substring(0, indexOf);
+//        }
         return this;
     }
 

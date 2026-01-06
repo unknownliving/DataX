@@ -124,7 +124,12 @@ public class SubCommonRdbmsReader extends CommonRdbmsReader {
                     // warn: bit(>1) -> Types.VARBINARY 可使用BytesColumn
                     case Types.BOOLEAN:
                     case Types.BIT:
-                        record.addColumn(new BoolColumn(rs.getBoolean(i)));
+                        boolean temp = rs.getBoolean(i);
+                        if (rs.wasNull()) {
+                            record.addColumn(new BoolColumn());
+                        } else {
+                            record.addColumn(new BoolColumn(temp));
+                        }
                         break;
 
                     case Types.NULL:
